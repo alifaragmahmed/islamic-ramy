@@ -553,3 +553,11 @@
         grid-template-columns: 1fr;
     }
 }
+
+
+.messenger-section {
+    /* background-image: url('../img/clouds.png');
+    background-size: 100%;
+    background-position: top;
+    background-repeat: no-repeat; */
+}

@@ -140,8 +140,6 @@
     </section>
 
     <!-- MEDIA -->
-
-    <!-- MEDIA -->
     <section class="section">
         <div class="container">
             <div class="section-head">
@@ -150,8 +148,12 @@
                     <p>نماذج من الدروس والمحاضرات (عرض تجريبي).</p>
                 </div>
             </div>
+        </div>
 
-            <div class="media">
+        <div class="row container p-0">
+
+            <div class="col-lg-4 col-md-4 col-sm-12">
+
                 <div class="video">
                     <div class="frame">
                         <div class="play">▶</div>
@@ -162,34 +164,75 @@
                     </div>
                 </div>
 
+            </div>
+
+            <div class="col-lg-8 col-md-8 col-sm-12">
                 <div class="media_slider">
                     <strong style="color:var(--primary); display:block; margin-bottom:10px;">قائمة الفيديوهات</strong>
-                    <div class="items">
-                        <div class="slide">
-                            <div class="thumb"></div>
-                            <div class="meta"><strong>مخارج الحروف</strong><span>10 دقائق</span></div>
-                        </div>
-                        <div class="slide">
-                            <div class="thumb"></div>
-                            <div class="meta"><strong>أحكام المدود</strong><span>12 دقيقة</span></div>
-                        </div>
-                        <div class="slide">
-                            <div class="thumb"></div>
-                            <div class="meta"><strong>ترتيل عملي</strong><span>8 دقائق</span></div>
-                        </div>
-                        <div class="slide">
-                            <div class="thumb"></div>
-                            <div class="meta"><strong>اختبار مستوى</strong><span>5 دقائق</span></div>
-                        </div>
+                    <div class="row">
+
+                        @for ($i = 0; $i < 3; $i++)
+                            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                                <div class="video shadow-none p-0">
+                                    <div class="frame rounded-bottom-0">
+                                        <div class="play">▶</div>
+                                    </div>
+                                    <div class="caption p-2">
+                                        <strong>درس تجويد: أحكام النون الساكنة</strong>
+                                        {{-- <span>10 دقائق</span> --}}
+                                    </div>
+                                </div>
+                            </div>
+                        @endfor
+
                     </div>
-                    <div class="small">اسحب يمين/يسار على الموبايل لمشاهدة المزيد.</div>
                 </div>
+
             </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CTA -->
+    <section class="section messenger-section">
+        <div class="container">
+
+            <div class="row align-items-center">
+
+                <!-- Text column (CENTER vertically) -->
+                <div class="col-lg-6 col-md-6 col-sm-12 d-flex flex-column justify-content-center">
+
+                    <h2 class="mb-3">
+                        <b>انضم الينا</b>
+                    </h2>
+
+                    <p class="fs-5 mb-4">
+                        انضم إلينا وابدأ رحلتك مع القرآن حفظًا وتدبرًا، في بيئة تربوية تُنمّي الإيمان وتبني شخصية قرآنية واعية.
+                    </p>
+
+                    <a href="#" target="_blank" rel="noopener noreferrer">
+                        <img height="50" src="{{ asset('front/img/messager_btn.png') }}" alt="">
+                    </a>
+                    <br>
+
+                </div>
+
+                <!-- Image column (BOTTOM / END) -->
+                <div class="col-lg-6 col-md-6 col-sm-12 d-flex justify-content-end align-items-end">
+                    <img class="img-fluid {{ isMobile() ? 'w-100' : 'w-75' }}" src="{{ asset('front/img/m.png') }}" alt="">
+                </div>
+
+            </div>
+
+
         </div>
     </section>
 
+
     <!-- CTA -->
-    <section class="section">
+    {{-- <section class="section">
         <div class="container">
             <div class="banner">
                 <div>
@@ -202,5 +245,5 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
 @endsection
