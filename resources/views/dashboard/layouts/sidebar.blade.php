@@ -78,7 +78,8 @@
         </li>
 
 
-        <li class="menu-item {{ request()->routeIs('admin.slider') || request()->is('admin-panel/metatags/home') ? 'active open' : '' }}">
+        <li
+            class="menu-item {{ request()->routeIs('admin.slider') || request()->is('admin-panel/metatags/home') ? 'active open' : '' }}">
             <a href="javascript:void(0);" class="menu-link menu-toggle">
                 <i class="menu-icon tf-icons bx bx-image"></i>
                 <div data-i18n="home">{{ __('lang.home') }}</div>
@@ -98,7 +99,8 @@
         </li>
 
         {{-- about --}}
-        <li class="menu-item {{ request()->routeIs('admin.about') || request()->routeIs('admin.step*') || request()->is('admin-panel/metatags/about') ? 'active open' : '' }}">
+        <li
+            class="menu-item {{ request()->routeIs('admin.about') || request()->routeIs('admin.step*') || request()->is('admin-panel/metatags/about') ? 'active open' : '' }}">
             <a href="javascript:void(0);" class="menu-link menu-toggle">
                 <i class="menu-icon tf-icons bx bx-info-circle"></i>
                 <div data-i18n="home">{{ __('lang.about') }}</div>
@@ -262,7 +264,8 @@
             </a>
         </li> --}}
 
-        <li class="menu-item {{ request()->routeIs('admin.why_chooses*') || request()->is('admin-panel/metatags/why_chooses') ? 'active open' : '' }}">
+        <li
+            class="menu-item {{ request()->routeIs('admin.why_chooses*') || request()->is('admin-panel/metatags/why_chooses') ? 'active open' : '' }}">
             <a href="javascript:void(0);" class="menu-link menu-toggle">
                 <i class="menu-icon tf-icons bx bx-box"></i>
                 <div data-i18n="home">{{ __('lang.why_chooses') }}</div>
@@ -282,7 +285,8 @@
             </ul>
         </li>
 
-        <li class="menu-item {{ request()->routeIs('admin.gallery*') || request()->is('admin-panel/metatags/gallery') ? 'active open' : '' }}">
+        <li
+            class="menu-item {{ request()->routeIs('admin.gallery*') || request()->is('admin-panel/metatags/gallery') ? 'active open' : '' }}">
             <a href="javascript:void(0);" class="menu-link menu-toggle">
                 <i class="menu-icon tf-icons bx bx-box"></i>
                 <div data-i18n="home">{{ __('lang.gallery') }}</div>
@@ -297,6 +301,28 @@
                 <li class="menu-item {{ request()->is('admin-panel/metatags/gallery') ? 'active' : '' }}">
                     <a href="{{ route('admin.meta', 'gallery') }}" class="menu-link">
                         <div data-i18n="Analytics">{{ __('lang.metatag') }}</div>
+                    </a>
+                </li>
+            </ul>
+        </li>
+
+        {{-- videos --}}
+        <li
+            class="menu-item {{ request()->routeIs('admin.video-category*') || request()->routeIs('admin.video*') ? 'active open' : '' }}">
+            <a href="javascript:void(0);" class="menu-link menu-toggle">
+                <i class="menu-icon tf-icons bx bx-video"></i>
+                <div data-i18n="videos">{{ __('lang.videos') }}</div>
+            </a>
+            <ul class="menu-sub">
+                <li class="menu-item {{ request()->routeIs('admin.video-category*') ? 'active' : '' }}">
+                    <a href="{{ route('admin.video-category') }}" class="menu-link ">
+                        <div data-i18n="video_categories">{{ __('lang.video_categories') }}</div>
+                    </a>
+                </li>
+                <li
+                    class="menu-item {{ request()->routeIs('admin.video') || request()->routeIs('admin.video.create') || request()->routeIs('admin.video.edit') ? 'active' : '' }}">
+                    <a href="{{ route('admin.video') }}" class="menu-link ">
+                        <div data-i18n="videos">{{ __('lang.videos') }}</div>
                     </a>
                 </li>
             </ul>

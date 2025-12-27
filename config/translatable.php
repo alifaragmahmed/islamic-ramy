@@ -10,8 +10,8 @@ return [
     | Contains an array with the applications available locales.
     |
      */
-    'locales'                            => [
-        // 'en',
+    'locales' => [
+        'en',
         'ar',
     ],
 
@@ -25,7 +25,7 @@ return [
     | colombian spanish will be saved as 'es-CO' into the database.
     |
      */
-    'locale_separator'                   => '-',
+    'locale_separator' => '-',
 
     /*
     |--------------------------------------------------------------------------
@@ -39,7 +39,7 @@ return [
     | and never fallback to the translator one.
     |
      */
-    'locale'                             => null,
+    'locale' => null,
 
     /*
     |--------------------------------------------------------------------------
@@ -52,7 +52,7 @@ return [
     | $useTranslationFallback when defined
     |
      */
-    'use_fallback'                       => false,
+    'use_fallback' => false,
 
     /*
     |--------------------------------------------------------------------------
@@ -64,7 +64,7 @@ return [
     | locale. Note that 'use_fallback' must be enabled.
     |
      */
-    'use_property_fallback'              => true,
+    'use_property_fallback' => true,
 
     /*
     |--------------------------------------------------------------------------
@@ -80,7 +80,7 @@ return [
     | is used first. So "es" will be checked before "es_MX".
     |
      */
-    'fallback_locale'                    => 'en',
+    'fallback_locale' => 'en',
 
     /*
     |--------------------------------------------------------------------------
@@ -92,7 +92,7 @@ return [
     | set this to 'App\Translations'.
     |
      */
-    'translation_model_namespace'        => null,
+    'translation_model_namespace' => null,
 
     /*
     |--------------------------------------------------------------------------
@@ -104,7 +104,7 @@ return [
     | application, set this to 'Trans'.
     |
      */
-    'translation_suffix'                 => 'Translation',
+    'translation_suffix' => 'Translation',
 
     /*
     |--------------------------------------------------------------------------
@@ -115,7 +115,7 @@ return [
     | translation model.
     |
      */
-    'locale_key'                         => 'locale',
+    'locale_key' => 'locale',
 
     /*
     |--------------------------------------------------------------------------
@@ -137,7 +137,7 @@ return [
     | your whole app.
      *
      */
-    'rule_factory'                       => [
+    'rule_factory' => [
         'format' => \Astrotomic\Translatable\Validation\RuleFactory::FORMAT_ARRAY,
         'prefix' => '%',
         'suffix' => '%',

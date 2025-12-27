@@ -1,6 +1,12 @@
 <?php
 
 return [
+    'select_category'                             => 'اختر قسم الفيديو',
+    'videos'                                      => 'الفيديوهات',
+    'video_categories'                             => 'قسم الفيديو',
+    'time_per_minutes'                            => 'الوقت بالدقيقة',
+    'embeded_text'                                => 'النص المضمن',
+    'file'                                        => 'الملف',
     'section_before_title'                        => 'الجولة الافتراضية لسعف كافيه',
     'info_desc'                                   => 'مقاعدنا جاهزة لكم… تذوّقوا القهوة والمشروبات في أجواء مريحة',
     'customer_desc'                               => 'رأي عملائنا في الخدمات',

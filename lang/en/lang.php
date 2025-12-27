@@ -1,6 +1,12 @@
 <?php
 
 return [
+    'select_category'                             => 'Select Category',
+    'videos'                                      => 'Videos',
+    'video_categories'                            => 'Video Category',
+    'time_per_minutes'                            => 'Time per minutes',
+    'embeded_text'                                => 'Embeded Text',
+    'file'                                        => 'File',
     'section_before_title'                        => 'Take a virtual tour inside saaf Cafe',
     'info_desc'                                   => 'Our seats are ready for you... Enjoy coffee and drinks in a comfortable atmosphere',
     'customer_desc'                               => 'Our customer reviews of our services',
