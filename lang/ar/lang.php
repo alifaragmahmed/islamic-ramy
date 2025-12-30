@@ -1,9 +1,13 @@
 <?php
 
 return [
+    'channels'                                    => 'الحلقات',
+    'all'                                         => 'الكل',
+    'intro_image'                                 => 'صورة البداية',
+    'programs'                                    => 'الحلقات',
     'select_category'                             => 'اختر قسم الفيديو',
     'videos'                                      => 'الفيديوهات',
-    'video_categories'                             => 'قسم الفيديو',
+    'video_categories'                            => 'قسم الفيديو',
     'time_per_minutes'                            => 'الوقت بالدقيقة',
     'embeded_text'                                => 'النص المضمن',
     'file'                                        => 'الملف',
@@ -155,7 +159,7 @@ return [
 
     'add_row'                                     => 'اضافة صف',
     'save_questions'                              => 'حفظ الأسئلة',
-    'about_us'                                    => ' من نحن',
+    'about_us'                                    => 'عن الاكادمية',
     'packages'                                    => 'الباقات',
     'our_work'                                    => 'أعمالنا',
     'blogs'                                       => 'المدونة',

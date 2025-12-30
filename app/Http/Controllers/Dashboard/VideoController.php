@@ -22,7 +22,7 @@ class VideoController extends Controller
     public function index()
     {
         $title = __('lang.delete_item');
-        $text = __('lang.are_you_sure');
+        $text  = __('lang.are_you_sure');
         confirmDelete($title, $text);
 
         return view('dashboard.videos.index', [
@@ -37,7 +37,7 @@ class VideoController extends Controller
     public function create()
     {
         return view('dashboard.videos.form', [
-            'resource' => $this->model,
+            'resource'   => $this->model,
             'categories' => VideoCategory::all(),
         ]);
     }
@@ -52,14 +52,14 @@ class VideoController extends Controller
         $inputs = $request->validated();
 
         // Auto-generate slug from Arabic title
-        $inputs['slug'] = Str::slug($inputs['en']['title']);
+        $inputs['slug'] = Str::slug($inputs['ar']['title']);
 
         if (isset($inputs['master_image'])) {
             $inputs['master_image'] = uploadImage($inputs['master_image'], config('path.VIDEO_PATH'), $inputs['ar']['title']);
         }
 
         if (isset($inputs['file']) && $request->hasFile('file')) {
-            $file = $request->file('file');
+            $file     = $request->file('file');
             $fileName = time() . '_' . $file->getClientOriginalName();
             $file->move(public_path(config('path.VIDEO_FILE_PATH')), $fileName);
             $inputs['file'] = config('path.VIDEO_FILE_PATH') . '/' . $fileName;
@@ -81,11 +81,11 @@ class VideoController extends Controller
     public function edit($id)
     {
         $title = __('lang.delete_item');
-        $text = __('lang.are_you_sure');
+        $text  = __('lang.are_you_sure');
         confirmDelete($title, $text);
 
         return view('dashboard.videos.form', [
-            'resource' => $this->model->findOrFail($id),
+            'resource'   => $this->model->findOrFail($id),
             'categories' => VideoCategory::all(),
         ]);
     }
@@ -98,12 +98,11 @@ class VideoController extends Controller
      */
     public function update(StoreVideo $request, $id)
     {
-        $inputs = $request->validated();
+        $inputs   = $request->validated();
         $resource = $this->model->findOrFail($id);
 
-
         // Auto-generate slug from Arabic title
-        $inputs['slug'] = Str::slug($inputs['en']['title']);
+        $inputs['slug'] = Str::slug($inputs['ar']['title']);
 
         if (isset($inputs['master_image'])) {
             $inputs['master_image'] = uploadImage($inputs['master_image'], config('path.VIDEO_PATH'), $inputs['ar']['title'], $resource->master_image);
@@ -115,7 +114,7 @@ class VideoController extends Controller
                 unlink(public_path($resource->file));
             }
 
-            $file = $request->file('file');
+            $file     = $request->file('file');
             $fileName = time() . '_' . $file->getClientOriginalName();
             $file->move(public_path(config('path.VIDEO_FILE_PATH')), $fileName);
             $inputs['file'] = config('path.VIDEO_FILE_PATH') . '/' . $fileName;

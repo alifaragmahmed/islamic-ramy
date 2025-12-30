@@ -48,6 +48,9 @@
     <script src="{{ asset('front/js/jquery-3.4.1.min.js') }}"></script>
     <script src="{{ asset('front/js/bootstrap.bundle.min.js') }}"></script>
     <script src="{{ url('/front/js/main.js') }}" defer></script>
+
+    @yield('scripts')
+
 </body>
 
 </html>

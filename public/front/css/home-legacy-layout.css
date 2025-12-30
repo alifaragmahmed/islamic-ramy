@@ -315,9 +315,13 @@
 
 .video .frame {
     aspect-ratio: 16/9;
-    background: linear-gradient(135deg, rgba(99, 49, 6, .18), rgba(216, 160, 63, .16));
+    /* background: linear-gradient(135deg, rgba(99, 49, 6, .18), rgba(216, 160, 63, .16)); */
     display: grid;
     place-items: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top;
+    cursor: pointer;
 }
 
 .play {
@@ -409,23 +413,12 @@
     padding: 14px;
 }
 
-.video .frame {
-    aspect-ratio: 16/9;
-    border-radius: calc(var(--radius) + 6px);
-    border: 1px solid rgba(234, 220, 199, .85);
-    background:
-        linear-gradient(135deg, rgba(99, 49, 6, .20), rgba(216, 160, 63, .18));
-    display: grid;
-    place-items: center;
-    overflow: hidden;
-}
-
 .video .play {
     width: 64px;
     height: 64px;
     border-radius: 50%;
-    background: rgba(0, 0, 0, .35);
-    border: 1px solid rgba(255, 255, 255, .35);
+    background: rgb(0 0 0 / 37%);
+    border: none;
     display: grid;
     place-items: center;
     color: #fff;
@@ -433,9 +426,7 @@
     font-size: 20px;
 }
 
-.video .caption {
-    margin-top: 12px;
-}
+.video .caption {}
 
 .video .caption strong {
     display: block;
@@ -447,7 +438,7 @@
     display: block;
     color: var(--muted);
     font-size: 13px;
-    margin-top: 6px;
+    /* margin-top: 6px; */
     line-height: 1.8;
 }
 

@@ -213,6 +213,24 @@
 
                                     </div>
 
+
+                                    <div class="col-md-4 pt-3">
+                                        <div class="form-group">
+                                            <label for="intro_image">{{ __('lang.intro_image') }}</label>
+                                            <div style="width: 100%;border: 1px dashed #ccc; padding: 10px">
+                                                <img class=" image-preview-intro_image" width="100%"
+                                                    src="{{ asset(optional($settings->where('key', 'intro_image')->first())->value ?? 'assets/img/default.jpg') }}">
+                                            </div>
+                                            <br>
+                                            <label for="intro_image"class="btn btn-primary text-white mt-2">
+                                                <i class="bx bx-cloud-upload fs-6 cursor-pointer"></i>
+                                            </label>
+
+                                            <input type="file" onchange="changeImage(this, 'intro_image')" id="intro_image" class="d-none form-control mt-3" name="intro_image">
+                                        </div>
+
+                                    </div>
+
                                     <div class="col-md-6 pt-3">
                                         <div class="form-group">
                                             {!! Form::label('menu_url', __('lang.menu_url'), ['class' => 'form-label']) !!}
@@ -234,6 +252,31 @@
                                             <input type="file" onchange="changeImage(this, 'company_profile')" id="company_profile" class=" form-control mt-3" name="company_profile">
                                         </div>
 
+                                    </div>
+
+                                    @php
+                                        $introVideo = optional($settings->where('key', 'intro_video')->first())->value;
+                                    @endphp
+
+                                    <div class="col-md-4 pt-3">
+                                        <div class="form-group">
+                                            <label for="intro_video">{{ __('lang.intro_video') }}</label>
+
+                                            <div style="width:100%; border:1px dashed #ccc; padding:10px; text-align:center">
+                                                @if ($introVideo)
+                                                    <video width="100%" height="220" controls>
+                                                        <source src="{{ asset($introVideo) }}" type="video/mp4">
+                                                        {{ __('lang.browser_not_support_video') }}
+                                                    </video>
+                                                @else
+                                                    <span class="text-muted">
+                                                        {{ __('lang.no_video_uploaded') }}
+                                                    </span>
+                                                @endif
+                                            </div>
+
+                                            <input type="file" id="intro_video" class="form-control mt-3" name="intro_video" accept="video/*" onchange="changeImage(this, 'intro_video')">
+                                        </div>
                                     </div>
 
 

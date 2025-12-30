@@ -155,12 +155,13 @@
             <div class="col-lg-4 col-md-4 col-sm-12">
 
                 <div class="video">
-                    <div class="frame">
+                    <div style="background-image: url({{ asset(getSettingValue('intro_image')) }})" class="frame rounded-bottom-0">
                         <div class="play">▶</div>
                     </div>
                     <div class="caption">
-                        <strong>درس تجويد: أحكام النون الساكنة</strong>
-                        <span>يمكن لاحقًا ربطه بيوتيوب/فيسبوك/ملفات فيديو.</span>
+                        <strong>{{ getSettingValue('site_name_' . app()->getLocale()) }}</strong>
+                        {{-- <span>{{ getSettingValue('site_name_' . app()->getLocale()) }}</span> --}}
+                        {{-- <span>يمكن لاحقًا ربطه بيوتيوب/فيسبوك/ملفات فيديو.</span> --}}
                     </div>
                 </div>
 
@@ -171,19 +172,19 @@
                     <strong style="color:var(--primary); display:block; margin-bottom:10px;">قائمة الفيديوهات</strong>
                     <div class="row">
 
-                        @for ($i = 0; $i < 3; $i++)
-                            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                        @foreach ($latestVideos as $video)
+                            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 p-1">
                                 <div class="video shadow-none p-0">
-                                    <div class="frame rounded-bottom-0">
+                                    <div style="background-image: url({{ asset($video->master_image) }})" class="frame rounded-bottom-0 mb-1">
                                         <div class="play">▶</div>
                                     </div>
-                                    <div class="caption p-2">
-                                        <strong>درس تجويد: أحكام النون الساكنة</strong>
-                                        {{-- <span>10 دقائق</span> --}}
+                                    <div class="caption ps-2 pe-2">
+                                        <strong style="font-size: 12px" class="">{{ $video->title }}</strong>
+                                        <span>{{ $video->time_per_minutes }} دقائق</span>
                                     </div>
                                 </div>
                             </div>
-                        @endfor
+                        @endforeach
 
                     </div>
                 </div>
@@ -212,8 +213,8 @@
                         انضم إلينا وابدأ رحلتك مع القرآن حفظًا وتدبرًا، في بيئة تربوية تُنمّي الإيمان وتبني شخصية قرآنية واعية.
                     </p>
 
-                    <a href="#" target="_blank" rel="noopener noreferrer">
-                        <img height="50" src="{{ asset('front/img/messager_btn.png') }}" alt="">
+                    <a href="{{ getSettingValue('eg_facebook_link') }}" target="_blank" rel="noopener noreferrer">
+                        <img height="40" src="{{ asset('front/img/messager_btn.png') }}" alt="">
                     </a>
                     <br>
 

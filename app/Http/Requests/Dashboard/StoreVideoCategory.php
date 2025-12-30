@@ -24,9 +24,9 @@ class StoreVideoCategory extends FormRequest
     public function rules()
     {
         return [
-            'icon' => ['nullable', 'image', 'mimes:png,jpg,jpeg,svg', 'max:2048'],
+            'icon'     => ['nullable', 'image', 'mimes:png,jpg,jpeg,svg', 'max:2048'],
             'ar.title' => ['required', 'string'],
-            'en.title' => ['required', 'string'],
+            // 'en.title' => ['required', 'string'],
         ];
     }
 }

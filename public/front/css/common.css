@@ -85,7 +85,8 @@ img {
 
 .btn:hover {
     transform: translateY(-1px);
-    background: #fff;
+    /* background: #fff; */
+    border: none !important;
 }
 
 .btn-primary {
@@ -178,4 +179,26 @@ img {
     background-repeat: repeat-x;
     height: 50px;
     width: 100%;
+}
+
+.pagination .page-link {
+    color: rgba(99, 49, 6, .95) !important;
+}
+
+.pagination .active .page-link {
+    background-color: rgba(99, 49, 6, .95) !important;
+    color: #fff !important;
+    border-color: rgba(99, 49, 6, .55) !important;
+}
+
+.page-title {
+    background-image: url(../img/header.png);
+    background-size: 900px 100%;
+    padding: 3vw;
+    position: relative;
+    padding-top: 45px;
+    background-position: top;
+    background-repeat: repeat-x;
+    height: 200px;
+    color: black !important;
 }

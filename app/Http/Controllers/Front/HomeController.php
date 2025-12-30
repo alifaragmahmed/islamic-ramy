@@ -7,6 +7,7 @@ use App\Models\Countr;
 use App\Models\CustomerOpinions;
 use App\Models\Feature;
 use App\Models\Slider;
+use App\Models\Video;
 use App\Models\WhyChoose;
 
 class HomeController extends Controller
@@ -20,14 +21,15 @@ class HomeController extends Controller
         $about = About::first() ?? new About();
 
         return view('front.home.index', [
-            'sliders'    => Slider::all(),
-            'slider'     => Slider::first(),
-            'metaBanner' => $metaBanner,
-            'about'      => $about,
-            'counters'   => Countr::all(),
-            'features'   => Feature::all(),
-            'whyUs'      => WhyChoose::all(),
-            'customers'  => CustomerOpinions::all(),
+            'latestVideos' => Video::latest()->take(5)->get(),
+            'sliders'      => Slider::all(),
+            'slider'       => Slider::first(),
+            'metaBanner'   => $metaBanner,
+            'about'        => $about,
+            'counters'     => Countr::all(),
+            'features'     => Feature::all(),
+            'whyUs'        => WhyChoose::all(),
+            'customers'    => CustomerOpinions::all(),
         ]);
     }
 
