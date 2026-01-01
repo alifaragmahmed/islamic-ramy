@@ -174,10 +174,18 @@ img {
 }
 
 .under-line {
-    background-image: url('../img/line.svg');
-    background-size: contain;
+    background-image: url('../img/bottom-line.svg');
+    background-size: auto 100%;
     background-repeat: repeat-x;
-    height: 50px;
+    height: 30px;
+    width: 100%;
+}
+
+.top-line {
+    background-image: url('../img/top-line.svg');
+    background-size: auto 100%;
+    background-repeat: repeat-x;
+    height: 30px;
     width: 100%;
 }
 
@@ -201,4 +209,8 @@ img {
     background-repeat: repeat-x;
     height: 200px;
     color: black !important;
+}
+
+.text-primary {
+    color: var(--primary) !important;
 }
