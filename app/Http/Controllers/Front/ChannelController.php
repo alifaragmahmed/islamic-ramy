@@ -28,12 +28,19 @@ class ChannelController extends Controller
     {
         $video      = Video::where('slug', $slug)->firstOrFail();
         $metaBanner = getMeta('home');
+        $comments   = collect([]);
         // Set Meta Home
         metaGenerate($metaBanner);
         return view('front.channels.show', [
             'resource'   => $video,
             'metaBanner' => $metaBanner,
+            'comments'   => $comments,
         ]);
+    }
+
+    public function storeComment()
+    {
+
     }
 
 }

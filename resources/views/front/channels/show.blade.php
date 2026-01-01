@@ -35,7 +35,7 @@
         </div>
     </section>
 
-    <section class="section" style="padding-top:10px;">
+    <section class="section p-5" style="padding-top:10px;">
         <div class="container">
 
             <br>
@@ -48,10 +48,27 @@
                         <div _style="background-image: url({{ asset($resource->master_image) }})" class="frame rounded-bottom-0 w3-round-large cursor-pointer">
                             {!! $resource->embeded_text !!}
                         </div>
+
                         <div class="caption">
                             <strong class="w3-xlarge">{{ $resource->title }}</strong>
+
                             <p>{{ $resource->description }}</p>
+
+                            <div class="d-flex justify-content-center w3-round-large border-1 w3-border w3-border-light-gray">
+                                <div class="flex-shrink-0 p-2">
+                                    <img height="70px" src="{{ asset('front/img/sheikh-ramy-profile.png') }}" alt="">
+                                </div>
+                                <div class="flex-grow-1">
+                                    <h5>الشيخ رامي أبو زريد</h5>
+                                    <strong>
+                                        {!! getSettingValue('site_name_' . app()->getLocale()) !!}
+                                    </strong>
+                                </div>
+                            </div>
+
                         </div>
+
+
                     </div>
 
                 </div>

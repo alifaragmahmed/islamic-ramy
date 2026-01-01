@@ -23,6 +23,7 @@ Route::get('/about', 'AboutController@index')->name('front.about');
 
 Route::get('/contact', 'ContactController@index')->name('front.contact');
 Route::post('/contact', 'ContactController@send')->name('front.contact.send');
+Route::post('/store-comment', 'ChannelController@storeComment')->name('front.comments.store');
 
 // Route::get('/blogs', 'BlogController@index')->name('front.blog');
 // Route::get('/blogs/{id}', 'BlogController@show')->name('front.blog.show');
