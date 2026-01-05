@@ -3,6 +3,7 @@ namespace App\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
 use App\Models\CustomerOpinions;
+use App\Models\Gallery;
 use App\Models\WhyChoose;
 
 class AboutController extends Controller
@@ -23,6 +24,7 @@ class AboutController extends Controller
             'guards'     => \App\Models\Guards::take(3)->get(),
             'whys'       => WhyChoose::get(),
             'customers'  => CustomerOpinions::all(),
+            'gallary'    => Gallery::all(),
         ]);
     }
 }

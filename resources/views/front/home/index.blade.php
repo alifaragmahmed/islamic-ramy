@@ -155,9 +155,19 @@
             <div class="col-lg-4 col-md-4 col-sm-12">
 
                 <div class="video">
-                    <div style="background-image: url({{ asset(getSettingValue('intro_image')) }})" class="frame rounded-bottom-0">
+                    <video id="my-video" class="video-js" controls preload="auto" style="width: 100%;height: 200px" poster="{{ asset(getSettingValue('intro_image')) }}" data-setup="{}">
+                        <source src="{{ asset(getSettingValue('intro_video')) }}" type="video/mp4" />
+                        <source src="{{ asset(getSettingValue('intro_video')) }}" type="video/webm" />
+                        <p class="vjs-no-js">
+                            To view this video please enable JavaScript, and consider upgrading to a
+                            web browser that
+                            <a href="https://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+                        </p>
+                    </video>
+
+                    {{-- <div style="background-image: url({{ asset(getSettingValue('intro_image')) }})" class="frame rounded-bottom-0">
                         <div class="play">▶</div>
-                    </div>
+                    </div> --}}
                     <div class="caption">
                         <strong>{{ getSettingValue('site_name_' . app()->getLocale()) }}</strong>
                         {{-- <span>{{ getSettingValue('site_name_' . app()->getLocale()) }}</span> --}}

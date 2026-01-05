@@ -19,7 +19,9 @@
         <div class="container">
             <div class="breadcrumb w3-text-black">الرئيسية / الحلقات</div>
             <h1 style="font-family:'Amiri', serif;">الحلقات</h1>
-            <div class="">تقسيم للدورات + مجموعة فيديوهات داخل كل قسم (تجريبي قابل للربط لاحقًا).</div>
+            <div class="h6">
+                حلقات متخصصة في حفظ القرآن ومراجعته بإتقان، مع تصحيح التلاوة وتثبيت الحفظ في أجواء إيمانية .
+            </div>
         </div>
     </section>
 
@@ -40,7 +42,7 @@
                     <div class="col-lg-4 col-md-4 col-sm-12 mb-2">
 
                         <a href="{{ route('front.channel.show', $item->slug) }}" class="text-decoration-none">
-                            <div class="video p-0">
+                            <div class="video p-0 wow w3-animate-zoom">
                                 <div style="background-image: url({{ asset($item->master_image) }})" class="frame rounded-bottom-0 w3-round-large">
                                     <div class="play">▶</div>
                                 </div>
@@ -60,20 +62,8 @@
                 {{ $videos->appends(request()->query())->render() }}
             </div>
 
-            <div class="banner" style="margin-top:16px;">
-                <div class="d-block">
-                    <img class="d-inline-block p-0" height="70px" src="{{ asset('front/img/sheikh-ramy.png') }}" alt="">
-                    <div class="d-inline-block p-2">
-                        <strong>هل تريد الانضمام لحلقة مناسبة لمستواك؟</strong>
-                        <span>راسلنا على واتساب وسنساعدك في تحديد القسم المناسب.</span>
-                    </div>
-                </div>
 
-                <a href="{{ getSettingValue('eg_facebook_link') }}" target="_blank" rel="noopener noreferrer">
-                    <img height="40" src="{{ asset('front/img/messager_btn.png') }}" alt="">
-                </a>
-                {{-- <a class="btn btn-primary" href="https://wa.me/201019028034" target="_blank" rel="noopener">تواصل واتساب</a> --}}
-            </div>
+            @include('front.layouts.banner')
         </div>
     </section>
 @endsection

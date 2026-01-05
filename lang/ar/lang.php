@@ -1,6 +1,7 @@
 <?php
 
 return [
+    'messenger'                                   => 'مسنجر',
     'channels'                                    => 'الحلقات',
     'all'                                         => 'الكل',
     'intro_image'                                 => 'صورة البداية',

@@ -24,6 +24,10 @@
     </style>
 
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
+    {{-- <link rel="stylesheet" href="{{ asset('front/lib/animate/animate.min.css') }}"> --}}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link href="https://vjs.zencdn.net/8.23.4/video-js.css" rel="stylesheet" />
+
     <style>
         *,
         h1,
@@ -37,7 +41,14 @@
             font-weight: 400;
             font-style: normal;
         }
+
+        body {
+            width: 100%;
+            height: 100%;
+        }
     </style>
+
+    @yield('css')
 </head>
 
 <body>
@@ -48,7 +59,22 @@
     <script src="{{ asset('front/js/jquery-3.4.1.min.js') }}"></script>
     <script src="{{ asset('front/js/bootstrap.bundle.min.js') }}"></script>
     <script src="{{ url('/front/js/main.js') }}" defer></script>
+    <script src="{{ asset('front/js/wow.js') }}" defer></script>
+    <script src="https://vjs.zencdn.net/8.23.4/video.min.js"></script>
 
+    <script>
+        // document ready
+        $(document).ready(function() {
+            let wow = new WOW({
+                boxClass: 'wow', // default
+                animateClass: 'animated', // default
+                offset: 0, // default
+                mobile: true, // default
+                live: true // default
+            })
+            wow.init();
+        });
+    </script>
     @yield('scripts')
 
 </body>

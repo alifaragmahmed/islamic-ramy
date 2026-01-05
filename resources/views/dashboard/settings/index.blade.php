@@ -519,7 +519,7 @@
                                     </div>
                                     <div class="col-md-6 pt-3">
                                         <div class="form-group">
-                                            {!! Form::label('snapchat', __('lang.snapchat'), ['class' => 'form-label']) !!}
+                                            {!! Form::label('snapchat', __('lang.messenger'), ['class' => 'form-label']) !!}
                                             {!! Form::url('eg_snapchat', old('eg_snapchat', optional($settings->where('key', 'eg_snapchat')->first())->value), [
                                                 'class' => 'form-control',
                                             ]) !!}
